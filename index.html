@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CITY INTELLIGENCE TOKYO · 3D Acoustic Viewer</title>
+  <!-- Load Google model-viewer v4.4.0 -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.4.0/model-viewer.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #08080a;
+      color: #f0f0f2;
+      font-family: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 100%;
+      --poster-color: #08080a;
+      --progress-bar-color: #e04f33;
+    }
+
+    /* Architectural Top-Left HUD */
+    .hud-header {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+      pointer-events: none;
+      background: rgba(8, 8, 10, 0.72);
+      backdrop-filter: blur(8px);
+      border-left: 2px solid #e04f33;
+      padding: 10px 14px;
+    }
+    .hud-header h1 {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      font-weight: 600;
+      color: #ffffff;
+    }
+    .hud-header p {
+      font-size: 10px;
+      color: #9a9aa2;
+      margin-top: 4px;
+      letter-spacing: 0.04em;
+    }
+
+    /* View Mode Switcher (Map vs. Ring) */
+    .mode-switcher {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+      display: flex;
+      gap: 6px;
+    }
+    .mode-btn {
+      background: rgba(16, 16, 20, 0.85);
+      border: 1px solid #2c2c34;
+      color: #a0a0aa;
+      font-family: inherit;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      padding: 7px 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .mode-btn:hover, .mode-btn.active {
+      border-color: #e04f33;
+      color: #ffffff;
+      background: rgba(224, 79, 51, 0.18);
+    }
+
+    /* 3D Spatial Hotspot Pins */
+    .hotspot {
+      background: rgba(10, 10, 14, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      color: #ffffff;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 10px;
+      padding: 5px 11px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+    .hotspot:hover, .hotspot.active {
+      background: #e04f33;
+      border-color: #ff856d;
+      transform: scale(1.08);
+    }
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #e04f33;
+    }
+    .hotspot.active .pulse-dot {
+      background: #ffffff;
+      box-shadow: 0 0 8px #ffffff;
+    }
+
+    /* Bottom Audio Transport Bar */
+    .transport-bar {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: none;
+    }
+    .audio-readout {
+      pointer-events: auto;
+      background: rgba(12, 12, 16, 0.88);
+      border: 1px solid #26262e;
+      padding: 8px 14px;
+      font-size: 10px;
+      color: #c8c8d0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    #stop-btn {
+      background: transparent;
+      border: 1px solid #444;
+      color: #fff;
+      font-family: inherit;
+      font-size: 9px;
+      padding: 3px 8px;
+      cursor: pointer;
+      display: none;
+    }
+    #stop-btn:hover { border-color: #e04f33; }
+
+    #ar-button {
+      pointer-events: auto;
+      background: #141418;
+      border: 1px solid #383842;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      padding: 9px 16px;
+      cursor: pointer;
+    }
+    #ar-button:hover { border-color: #e04f33; }
+  </style>
+</head>
+<body>
+
+  <div class="hud-header">
+    <h1 id="viewer-title">CITY INTELLIGENCE TOKYO · TEAM 01</h1>
+    <p id="viewer-subtitle">URBAN ACOUSTIC TOPOLOGY & PARAMETRIC ARTIFACT</p>
+  </div>
+
+  <!-- Toggle between Urban Map .glb and Parametric Ring .glb -->
+  <div class="mode-switcher">
+    <button class="mode-btn active" id="btn-map" data-src="../../assets/models/team01_map.glb">01 · AREA MAP</button>
+    <button class="mode-btn" id="btn-ring" data-src="../../assets/models/team01_ring.glb">02 · RING ARTIFACT</button>
+  </div>
+
+  <model-viewer
+    id="mv"
+    src="../../assets/models/team01_map.glb"
+    alt="Tokyo Acoustic Map and Parametric Ring"
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    camera-controls
+    touch-action="pan-y"
+    auto-rotate
+    auto-rotate-delay="2500"
+    rotation-per-second="15deg"
+    tone-mapping="neutral"
+    shadow-intensity="1.1"
+    exposure="1.1"
+    environment-image="neutral">
+
+    <!-- Channel 01 Hotspot -->
+    <button class="hotspot" slot="hotspot-1"
+      data-position="0.012m 0.005m 0.008m"
+      data-normal="0m 1m 0m"
+      data-audio="../../assets/audio/ch1_ableton_push.mp3"
+      data-info="CH1 · ABLETON PUSH FIELD CAPTURE [35.6595° N, 139.7004° E]">
+      <span class="pulse-dot"></span> CH1
+    </button>
+
+    <!-- Channel 02 Hotspot -->
+    <button class="hotspot" slot="hotspot-2"
+      data-position="-0.010m 0.005m -0.006m"
+      data-normal="0m 1m 0m"
+      data-audio="../../assets/audio/ch2_ableton_push.mp3"
+      data-info="CH2 · ABLETON PUSH FIELD CAPTURE [35.6601° N, 139.7012° E]">
+      <span class="pulse-dot"></span> CH2
+    </button>
+
+    <!-- Channel 03 Hotspot -->
+    <button class="hotspot" slot="hotspot-3"
+      data-position="0.004m 0.005m -0.014m"
+      data-normal="0m 1m 0m"
+      data-audio="../../assets/audio/ch3_suno_synthesis.mp3"
+      data-info="CH3 · CELL PHONE → SUNO AI SYNTHESIS [35.6588° N, 139.6998° E]">
+      <span class="pulse-dot"></span> CH3
+    </button>
+
+    <!-- Channel 04 Hotspot -->
+    <button class="hotspot" slot="hotspot-4"
+      data-position="-0.005m 0.005m 0.013m"
+      data-normal="0m 1m 0m"
+      data-audio="../../assets/audio/ch4_suno_synthesis.mp3"
+      data-info="CH4 · CELL PHONE → SUNO AI SYNTHESIS [35.6592° N, 139.7019° E]">
+      <span class="pulse-dot"></span> CH4
+    </button>
+
+    <button slot="ar-button" id="ar-button">VIEW IN AR</button>
+  </model-viewer>
+
+  <div class="transport-bar">
+    <div class="audio-readout">
+      <span id="status-label">DRAG TO ORBIT · CLICK CH1–CH4 PIN TO AUDITION STREAM</span>
+      <button id="stop-btn">STOP</button>
+    </div>
+  </div>
+
+  <audio id="audio-engine" preload="auto"></audio>
+
+  <script>
+    const mv = document.getElementById('mv');
+    const audio = document.getElementById('audio-engine');
+    const statusLabel = document.getElementById('status-label');
+    const stopBtn = document.getElementById('stop-btn');
+    const hotspots = document.querySelectorAll('.hotspot');
+    const modeBtns = document.querySelectorAll('.mode-btn');
+
+    // Support URL parameter ?view=ring so Notion can embed Map and Ring separately
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('view') === 'ring') {
+      const ringBtn = document.getElementById('btn-ring');
+      mv.src = ringBtn.dataset.src;
+      modeBtns.forEach(b => b.classList.remove('active'));
+      ringBtn.classList.add('active');
+    }
+
+    // Switch between 3D Area Map and 3D Ring Artifact
+    modeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        modeBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        mv.src = btn.dataset.src;
+        mv.cameraOrbit = 'auto auto auto';
+      });
+    });
+
+    // Hotspot Audio Playback & Camera Focus
+    hotspots.forEach(pin => {
+      pin.addEventListener('click', () => {
+        const isCurrent = pin.classList.contains('active');
+        hotspots.forEach(p => p.classList.remove('active'));
+
+        if (isCurrent) {
+          stopPlayback();
+          return;
+        }
+
+        pin.classList.add('active');
+        mv.autoRotate = false;
+        mv.cameraTarget = pin.dataset.position;
+        audio.src = pin.dataset.audio;
+        audio.play();
+        statusLabel.textContent = pin.dataset.info;
+        stopBtn.style.display = 'inline-block';
+      });
+    });
+
+    function stopPlayback() {
+      audio.pause();
+      audio.currentTime = 0;
+      hotspots.forEach(p => p.classList.remove('active'));
+      mv.autoRotate = true;
+      statusLabel.textContent = 'DRAG TO ORBIT · CLICK CH1–CH4 PIN TO AUDITION STREAM';
+      stopBtn.style.display = 'none';
+    }
+
+    stopBtn.addEventListener('click', stopPlayback);
+    audio.addEventListener('ended', stopPlayback);
+  </script>
+</body>
+</html>
