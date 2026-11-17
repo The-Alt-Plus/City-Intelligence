@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material type-name="Physically Based" type-id="5a8d7b9b-cdc9-49de-8c16-2ef64fb097ab" render-engine-id="5c88154e-41d5-4918-a4a0-4053f0021536" name="04_Braided_Ring_Silver">
+  <parameters>
+    <base-color type="color">0.847059,0.823529,0.772549,1</base-color>
+    <metallic type="float">1.0</metallic>
+    <roughness type="float">0.25</roughness>
+    <emission type="color">0.0,0.0,0.0,1</emission>
+    <emission-multiplier type="float">0.0</emission-multiplier>
+    <opacity type="float">1.0</opacity>
+  </parameters>
+</material>

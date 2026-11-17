@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material type-name="Physically Based" type-id="5a8d7b9b-cdc9-49de-8c16-2ef64fb097ab" render-engine-id="5c88154e-41d5-4918-a4a0-4053f0021536" name="02_Streets_LightGray">
+  <parameters>
+    <base-color type="color">0.72549,0.745098,0.784314,1</base-color>
+    <metallic type="float">0.0</metallic>
+    <roughness type="float">1.0</roughness>
+    <emission type="color">0.647059,0.666667,0.705882,1</emission>
+    <emission-multiplier type="float">1.0</emission-multiplier>
+    <opacity type="float">1.0</opacity>
+  </parameters>
+</material>

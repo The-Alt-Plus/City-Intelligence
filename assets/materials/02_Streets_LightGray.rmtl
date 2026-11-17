@@ -1,0 +1,266 @@
+﻿<xml>
+	<material type-name="5a8d7b9b-cdc9-49de-8c16-2ef64fb097ab" render-engine-id="99999999-9999-9999-9999-999999999999" plug-in-id="02BF604D-799C-4CC2-830E-8D72F21B14B7" type-id="5A8D7B9B-CDC9-49DE-8C16-2EF64FB097AB" notes="" tags="" hidden="false" reference="false" auto-delete="false">
+		<parameters-v8>
+			<parameter name="automatic-dynamic-field-meta-data" type="string">&lt;xml/&gt;</parameter>
+			<parameter name="pbr-base-color" type="color">0.980000019073486,0.980000019073486,0.980000019073486,1</parameter>
+			<parameter name="pbr-base-color-on" type="bool">false</parameter>
+			<parameter name="pbr-base-color-double-amount" type="double">1</parameter>
+			<parameter name="pbr-base-color-amount" type="int">100</parameter>
+			<parameter name="pbr-subsurface" type="double">0</parameter>
+			<parameter name="pbr-subsurface-on" type="bool">false</parameter>
+			<parameter name="pbr-subsurface-double-amount" type="double">1</parameter>
+			<parameter name="pbr-subsurface-amount" type="int">100</parameter>
+			<parameter name="pbr-subsurface-scattering-radius" type="double">0</parameter>
+			<parameter name="pbr-subsurface-scattering-radius-on" type="bool">false</parameter>
+			<parameter name="pbr-subsurface-scattering-radius-double-amount" type="double">0.01</parameter>
+			<parameter name="pbr-subsurface-scattering-radius-amount" type="int">1</parameter>
+			<parameter name="pbr-metallic" type="double">0</parameter>
+			<parameter name="pbr-metallic-on" type="bool">false</parameter>
+			<parameter name="pbr-metallic-double-amount" type="double">1</parameter>
+			<parameter name="pbr-metallic-amount" type="int">100</parameter>
+			<parameter name="pbr-specular" type="double">0.5</parameter>
+			<parameter name="pbr-specular-on" type="bool">false</parameter>
+			<parameter name="pbr-specular-double-amount" type="double">1</parameter>
+			<parameter name="pbr-specular-amount" type="int">100</parameter>
+			<parameter name="pbr-specular-tint" type="double">0</parameter>
+			<parameter name="pbr-specular-tint-on" type="bool">false</parameter>
+			<parameter name="pbr-specular-tint-double-amount" type="double">1</parameter>
+			<parameter name="pbr-specular-tint-amount" type="int">100</parameter>
+			<parameter name="pbr-roughness" type="double">0.2</parameter>
+			<parameter name="pbr-roughness-on" type="bool">false</parameter>
+			<parameter name="pbr-roughness-double-amount" type="double">1</parameter>
+			<parameter name="pbr-roughness-amount" type="int">100</parameter>
+			<parameter name="pbr-anisotropic" type="double">0</parameter>
+			<parameter name="pbr-anisotropic-on" type="bool">false</parameter>
+			<parameter name="pbr-anisotropic-double-amount" type="double">1</parameter>
+			<parameter name="pbr-anisotropic-amount" type="int">100</parameter>
+			<parameter name="pbr-anisotropic-rotation" type="double">0</parameter>
+			<parameter name="pbr-anisotropic-rotation-on" type="bool">false</parameter>
+			<parameter name="pbr-anisotropic-rotation-double-amount" type="double">1</parameter>
+			<parameter name="pbr-anisotropic-rotation-amount" type="int">100</parameter>
+			<parameter name="pbr-sheen" type="double">0</parameter>
+			<parameter name="pbr-sheen-on" type="bool">false</parameter>
+			<parameter name="pbr-sheen-double-amount" type="double">1</parameter>
+			<parameter name="pbr-sheen-amount" type="int">100</parameter>
+			<parameter name="pbr-sheen-tint" type="double">0</parameter>
+			<parameter name="pbr-sheen-tint-on" type="bool">false</parameter>
+			<parameter name="pbr-sheen-tint-double-amount" type="double">1</parameter>
+			<parameter name="pbr-sheen-tint-amount" type="int">100</parameter>
+			<parameter name="pbr-clearcoat" type="double">0</parameter>
+			<parameter name="pbr-clearcoat-on" type="bool">false</parameter>
+			<parameter name="pbr-clearcoat-double-amount" type="double">1</parameter>
+			<parameter name="pbr-clearcoat-amount" type="int">100</parameter>
+			<parameter name="pbr-clearcoat-roughness" type="double">0</parameter>
+			<parameter name="pbr-clearcoat-roughness-on" type="bool">false</parameter>
+			<parameter name="pbr-clearcoat-roughness-double-amount" type="double">1</parameter>
+			<parameter name="pbr-clearcoat-roughness-amount" type="int">100</parameter>
+			<parameter name="pbr-opacity-ior" type="double">1.52</parameter>
+			<parameter name="pbr-opacity-ior-on" type="bool">false</parameter>
+			<parameter name="pbr-opacity-ior-double-amount" type="double">1</parameter>
+			<parameter name="pbr-opacity-ior-amount" type="int">100</parameter>
+			<parameter name="pbr-opacity" type="double">1</parameter>
+			<parameter name="pbr-opacity-on" type="bool">false</parameter>
+			<parameter name="pbr-opacity-double-amount" type="double">1</parameter>
+			<parameter name="pbr-opacity-amount" type="int">100</parameter>
+			<parameter name="pbr-opacity-roughness" type="double">0</parameter>
+			<parameter name="pbr-opacity-roughness-on" type="bool">false</parameter>
+			<parameter name="pbr-opacity-roughness-double-amount" type="double">1</parameter>
+			<parameter name="pbr-opacity-roughness-amount" type="int">100</parameter>
+			<parameter name="pbr-alpha" type="double">1</parameter>
+			<parameter name="pbr-alpha-on" type="bool">false</parameter>
+			<parameter name="pbr-alpha-double-amount" type="double">1</parameter>
+			<parameter name="pbr-alpha-amount" type="int">100</parameter>
+			<parameter name="pbr-subsurface-scattering-color" type="color">1,1,1,1</parameter>
+			<parameter name="pbr-subsurface-scattering-color-on" type="bool">false</parameter>
+			<parameter name="pbr-subsurface-scattering-color-double-amount" type="double">1</parameter>
+			<parameter name="pbr-subsurface-scattering-color-amount" type="int">100</parameter>
+			<parameter name="pbr-emission" type="color">0,0,0,1</parameter>
+			<parameter name="pbr-emission-on" type="bool">false</parameter>
+			<parameter name="pbr-emission-double-amount" type="double">1</parameter>
+			<parameter name="pbr-emission-amount" type="int">100</parameter>
+			<parameter name="emission-multiplier" type="double">1</parameter>
+			<parameter name="emission-multiplier-on" type="bool">false</parameter>
+			<parameter name="emission-multiplier-double-amount" type="double">1</parameter>
+			<parameter name="emission-multiplier-amount" type="int">100</parameter>
+			<parameter name="alpha-transparency" type="bool">true</parameter>
+			<parameter name="pbr-ambient-occlusion" type="double">1</parameter>
+			<parameter name="pbr-ambient-occlusion-on" type="bool">false</parameter>
+			<parameter name="pbr-ambient-occlusion-double-amount" type="double">1</parameter>
+			<parameter name="pbr-ambient-occlusion-amount" type="int">100</parameter>
+			<parameter name="pbr-bump" type="color">0,0,0,1</parameter>
+			<parameter name="pbr-bump-on" type="bool">false</parameter>
+			<parameter name="pbr-bump-double-amount" type="double">0.3</parameter>
+			<parameter name="pbr-bump-amount" type="int">30</parameter>
+			<parameter name="pbr-displacement" type="double">0</parameter>
+			<parameter name="pbr-displacement-on" type="bool">false</parameter>
+			<parameter name="pbr-displacement-double-amount" type="double">0.001</parameter>
+			<parameter name="pbr-displacement-amount" type="int">0</parameter>
+			<parameter name="pbr-clearcoat-bump" type="color">0,0,0,1</parameter>
+			<parameter name="pbr-clearcoat-bump-on" type="bool">false</parameter>
+			<parameter name="pbr-clearcoat-bump-double-amount" type="double">1</parameter>
+			<parameter name="pbr-clearcoat-bump-amount" type="int">100</parameter>
+			<parameter name="pbr-show-ui-basic-metalrough" type="bool">false</parameter>
+			<parameter name="pbr-show-ui-subsurface" type="bool">false</parameter>
+			<parameter name="pbr-show-ui-specularity" type="bool">false</parameter>
+			<parameter name="pbr-show-ui-anisotropy" type="bool">false</parameter>
+			<parameter name="pbr-show-ui-sheen" type="bool">false</parameter>
+			<parameter name="pbr-show-ui-clearcoat" type="bool">false</parameter>
+			<parameter name="pbr-show-ui-opacity" type="bool">false</parameter>
+			<parameter name="pbr-show-ui-emission" type="bool">false</parameter>
+			<parameter name="pbr-show-ui-bump-displacement" type="bool">false</parameter>
+			<parameter name="pbr-show-ui-ambient-occlusion" type="bool">false</parameter>
+		</parameters-v8>
+		<parameters>
+			<automatic-dynamic-field-meta-data type="string">&lt;xml/&gt;</automatic-dynamic-field-meta-data>
+			<pbr-base-color type="color">0.980000019073486,0.980000019073486,0.980000019073486,1</pbr-base-color>
+			<pbr-base-color-on type="bool">false</pbr-base-color-on>
+			<pbr-base-color-double-amount type="double">1</pbr-base-color-double-amount>
+			<pbr-base-color-amount type="int">100</pbr-base-color-amount>
+			<pbr-subsurface type="double">0</pbr-subsurface>
+			<pbr-subsurface-on type="bool">false</pbr-subsurface-on>
+			<pbr-subsurface-double-amount type="double">1</pbr-subsurface-double-amount>
+			<pbr-subsurface-amount type="int">100</pbr-subsurface-amount>
+			<pbr-subsurface-scattering-radius type="double">0</pbr-subsurface-scattering-radius>
+			<pbr-subsurface-scattering-radius-on type="bool">false</pbr-subsurface-scattering-radius-on>
+			<pbr-subsurface-scattering-radius-double-amount type="double">0.01</pbr-subsurface-scattering-radius-double-amount>
+			<pbr-subsurface-scattering-radius-amount type="int">1</pbr-subsurface-scattering-radius-amount>
+			<pbr-metallic type="double">0</pbr-metallic>
+			<pbr-metallic-on type="bool">false</pbr-metallic-on>
+			<pbr-metallic-double-amount type="double">1</pbr-metallic-double-amount>
+			<pbr-metallic-amount type="int">100</pbr-metallic-amount>
+			<pbr-specular type="double">0.5</pbr-specular>
+			<pbr-specular-on type="bool">false</pbr-specular-on>
+			<pbr-specular-double-amount type="double">1</pbr-specular-double-amount>
+			<pbr-specular-amount type="int">100</pbr-specular-amount>
+			<pbr-specular-tint type="double">0</pbr-specular-tint>
+			<pbr-specular-tint-on type="bool">false</pbr-specular-tint-on>
+			<pbr-specular-tint-double-amount type="double">1</pbr-specular-tint-double-amount>
+			<pbr-specular-tint-amount type="int">100</pbr-specular-tint-amount>
+			<pbr-roughness type="double">0.2</pbr-roughness>
+			<pbr-roughness-on type="bool">false</pbr-roughness-on>
+			<pbr-roughness-double-amount type="double">1</pbr-roughness-double-amount>
+			<pbr-roughness-amount type="int">100</pbr-roughness-amount>
+			<pbr-anisotropic type="double">0</pbr-anisotropic>
+			<pbr-anisotropic-on type="bool">false</pbr-anisotropic-on>
+			<pbr-anisotropic-double-amount type="double">1</pbr-anisotropic-double-amount>
+			<pbr-anisotropic-amount type="int">100</pbr-anisotropic-amount>
+			<pbr-anisotropic-rotation type="double">0</pbr-anisotropic-rotation>
+			<pbr-anisotropic-rotation-on type="bool">false</pbr-anisotropic-rotation-on>
+			<pbr-anisotropic-rotation-double-amount type="double">1</pbr-anisotropic-rotation-double-amount>
+			<pbr-anisotropic-rotation-amount type="int">100</pbr-anisotropic-rotation-amount>
+			<pbr-sheen type="double">0</pbr-sheen>
+			<pbr-sheen-on type="bool">false</pbr-sheen-on>
+			<pbr-sheen-double-amount type="double">1</pbr-sheen-double-amount>
+			<pbr-sheen-amount type="int">100</pbr-sheen-amount>
+			<pbr-sheen-tint type="double">0</pbr-sheen-tint>
+			<pbr-sheen-tint-on type="bool">false</pbr-sheen-tint-on>
+			<pbr-sheen-tint-double-amount type="double">1</pbr-sheen-tint-double-amount>
+			<pbr-sheen-tint-amount type="int">100</pbr-sheen-tint-amount>
+			<pbr-clearcoat type="double">0</pbr-clearcoat>
+			<pbr-clearcoat-on type="bool">false</pbr-clearcoat-on>
+			<pbr-clearcoat-double-amount type="double">1</pbr-clearcoat-double-amount>
+			<pbr-clearcoat-amount type="int">100</pbr-clearcoat-amount>
+			<pbr-clearcoat-roughness type="double">0</pbr-clearcoat-roughness>
+			<pbr-clearcoat-roughness-on type="bool">false</pbr-clearcoat-roughness-on>
+			<pbr-clearcoat-roughness-double-amount type="double">1</pbr-clearcoat-roughness-double-amount>
+			<pbr-clearcoat-roughness-amount type="int">100</pbr-clearcoat-roughness-amount>
+			<pbr-opacity-ior type="double">1.52</pbr-opacity-ior>
+			<pbr-opacity-ior-on type="bool">false</pbr-opacity-ior-on>
+			<pbr-opacity-ior-double-amount type="double">1</pbr-opacity-ior-double-amount>
+			<pbr-opacity-ior-amount type="int">100</pbr-opacity-ior-amount>
+			<pbr-opacity type="double">1</pbr-opacity>
+			<pbr-opacity-on type="bool">false</pbr-opacity-on>
+			<pbr-opacity-double-amount type="double">1</pbr-opacity-double-amount>
+			<pbr-opacity-amount type="int">100</pbr-opacity-amount>
+			<pbr-opacity-roughness type="double">0</pbr-opacity-roughness>
+			<pbr-opacity-roughness-on type="bool">false</pbr-opacity-roughness-on>
+			<pbr-opacity-roughness-double-amount type="double">1</pbr-opacity-roughness-double-amount>
+			<pbr-opacity-roughness-amount type="int">100</pbr-opacity-roughness-amount>
+			<pbr-alpha type="double">1</pbr-alpha>
+			<pbr-alpha-on type="bool">false</pbr-alpha-on>
+			<pbr-alpha-double-amount type="double">1</pbr-alpha-double-amount>
+			<pbr-alpha-amount type="int">100</pbr-alpha-amount>
+			<pbr-subsurface-scattering-color type="color">1,1,1,1</pbr-subsurface-scattering-color>
+			<pbr-subsurface-scattering-color-on type="bool">false</pbr-subsurface-scattering-color-on>
+			<pbr-subsurface-scattering-color-double-amount type="double">1</pbr-subsurface-scattering-color-double-amount>
+			<pbr-subsurface-scattering-color-amount type="int">100</pbr-subsurface-scattering-color-amount>
+			<pbr-emission type="color">0,0,0,1</pbr-emission>
+			<pbr-emission-on type="bool">false</pbr-emission-on>
+			<pbr-emission-double-amount type="double">1</pbr-emission-double-amount>
+			<pbr-emission-amount type="int">100</pbr-emission-amount>
+			<emission-multiplier type="double">1</emission-multiplier>
+			<emission-multiplier-on type="bool">false</emission-multiplier-on>
+			<emission-multiplier-double-amount type="double">1</emission-multiplier-double-amount>
+			<emission-multiplier-amount type="int">100</emission-multiplier-amount>
+			<alpha-transparency type="bool">true</alpha-transparency>
+			<pbr-ambient-occlusion type="double">1</pbr-ambient-occlusion>
+			<pbr-ambient-occlusion-on type="bool">false</pbr-ambient-occlusion-on>
+			<pbr-ambient-occlusion-double-amount type="double">1</pbr-ambient-occlusion-double-amount>
+			<pbr-ambient-occlusion-amount type="int">100</pbr-ambient-occlusion-amount>
+			<pbr-bump type="color">0,0,0,1</pbr-bump>
+			<pbr-bump-on type="bool">false</pbr-bump-on>
+			<pbr-bump-double-amount type="double">0.3</pbr-bump-double-amount>
+			<pbr-bump-amount type="int">30</pbr-bump-amount>
+			<pbr-displacement type="double">0</pbr-displacement>
+			<pbr-displacement-on type="bool">false</pbr-displacement-on>
+			<pbr-displacement-double-amount type="double">0.001</pbr-displacement-double-amount>
+			<pbr-displacement-amount type="int">0</pbr-displacement-amount>
+			<pbr-clearcoat-bump type="color">0,0,0,1</pbr-clearcoat-bump>
+			<pbr-clearcoat-bump-on type="bool">false</pbr-clearcoat-bump-on>
+			<pbr-clearcoat-bump-double-amount type="double">1</pbr-clearcoat-bump-double-amount>
+			<pbr-clearcoat-bump-amount type="int">100</pbr-clearcoat-bump-amount>
+			<pbr-show-ui-basic-metalrough type="bool">false</pbr-show-ui-basic-metalrough>
+			<pbr-show-ui-subsurface type="bool">false</pbr-show-ui-subsurface>
+			<pbr-show-ui-specularity type="bool">false</pbr-show-ui-specularity>
+			<pbr-show-ui-anisotropy type="bool">false</pbr-show-ui-anisotropy>
+			<pbr-show-ui-sheen type="bool">false</pbr-show-ui-sheen>
+			<pbr-show-ui-clearcoat type="bool">false</pbr-show-ui-clearcoat>
+			<pbr-show-ui-opacity type="bool">false</pbr-show-ui-opacity>
+			<pbr-show-ui-emission type="bool">false</pbr-show-ui-emission>
+			<pbr-show-ui-bump-displacement type="bool">false</pbr-show-ui-bump-displacement>
+			<pbr-show-ui-ambient-occlusion type="bool">false</pbr-show-ui-ambient-occlusion>
+		</parameters>
+		<simulation>
+			<ambient type="color">0,0,0,1</ambient>
+			<diffuse type="color">0.980392158031464,0.980392158031464,0.980392158031464,1</diffuse>
+			<emission type="color">0,0,0,1</emission>
+			<specular type="color">0.800000011920929,0.800000011920929,0.800000011920929,1</specular>
+			<shine type="double">0.8</shine>
+			<transparency type="double">0</transparency>
+			<reflectivity type="double">0.8</reflectivity>
+			<ior type="double">1.52</ior>
+			<fresnel-enabled type="bool">true</fresnel-enabled>
+			<polish-amount type="double">0.8</polish-amount>
+			<clarity-amount type="double">1</clarity-amount>
+			<reflection type="color">1,1,1,1</reflection>
+			<transparent type="color">1,1,1,1</transparent>
+			<is-physically-based type="bool">true</is-physically-based>
+			<pbr-brdf type="string">ggx</pbr-brdf>
+			<pbr-base-color type="color">0.980000019073486,0.980000019073486,0.980000019073486,1</pbr-base-color>
+			<pbr-subsurface type="double">0</pbr-subsurface>
+			<pbr-subsurface-scattering-color type="color">1,1,1,1</pbr-subsurface-scattering-color>
+			<pbr-subsurface-scattering-radius type="double">0</pbr-subsurface-scattering-radius>
+			<pbr-specular type="double">0.5</pbr-specular>
+			<pbr-specular-tint type="double">0</pbr-specular-tint>
+			<pbr-metallic type="double">0</pbr-metallic>
+			<pbr-roughness type="double">0.2</pbr-roughness>
+			<pbr-anisotropic type="double">0</pbr-anisotropic>
+			<pbr-anisotropic-rotation type="double">0</pbr-anisotropic-rotation>
+			<pbr-sheen type="double">0</pbr-sheen>
+			<pbr-sheen-tint type="double">0</pbr-sheen-tint>
+			<pbr-clearcoat type="double">0</pbr-clearcoat>
+			<pbr-clearcoat-roughness type="double">0</pbr-clearcoat-roughness>
+			<pbr-opacity type="double">1</pbr-opacity>
+			<pbr-opacity-ior type="double">1.52</pbr-opacity-ior>
+			<pbr-opacity-roughness type="double">0</pbr-opacity-roughness>
+			<pbr-emission type="color">0,0,0,1</pbr-emission>
+			<pbr-alpha type="double">1</pbr-alpha>
+			<pbr-use-base-color-texture-alpha type="bool">true</pbr-use-base-color-texture-alpha>
+		</simulation>
+	</material>
+	<meta-data>
+		<renderer-name>Generic</renderer-name>
+		<type-name>Physically Based</type-name>
+	</meta-data>
+	<thumbnail width="256" height="256" format="jpeg" original-size="9292" compressed-size="9292" compression="none" encoding="base64">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</thumbnail>
+</xml>

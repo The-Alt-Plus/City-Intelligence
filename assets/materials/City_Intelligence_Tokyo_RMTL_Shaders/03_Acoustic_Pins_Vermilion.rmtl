@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material type="runtime" type-id="5a8d7b9b-cdc9-49de-8c16-2ef64fb097ab" render-engine-id="5c88154e-41d5-4918-a4a0-4053f0021536" name="03_Acoustic_Pins_Vermilion">
+  <parameters>
+    <base-color type="color">0.878431,0.309804,0.2,1</base-color>
+    <metallic type="float">0.0</metallic>
+    <roughness type="float">0.4</roughness>
+    <emission type="color">0.878431,0.309804,0.2,1</emission>
+    <emission-multiplier type="float">1.2</emission-multiplier>
+    <opacity type="float">1.0</opacity>
+  </parameters>
+</material>
