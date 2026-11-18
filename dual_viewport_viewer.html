@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -231,6 +232,7 @@
       body {
         padding: 12px;
       }
+
       .split-viewport-grid {
         grid-template-columns: 1fr;
         grid-template-rows: 55vh 55vh;
@@ -240,6 +242,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <main class="split-viewport-grid">
@@ -258,54 +261,32 @@
         <input type="file" id="upload-map-glb" accept=".glb,.gltf" />
       </div>
 
-      <model-viewer
-        id="mv-map"
-        src="assets/models/example_berlin.glb"
-        alt="Tokyo Urban District Massing and Street Network"
-        camera-controls
-        touch-action="pan-y"
-        camera-orbit="35deg 58deg 105%"
-        min-camera-orbit="auto 15deg auto"
-        max-camera-orbit="auto 85deg auto"
-        tone-mapping="neutral"
-        shadow-intensity="1.2"
-        shadow-softness="0.8"
-        exposure="1.05"
-        environment-image="neutral">
+      <model-viewer id="mv-map" src="assets/models/example_berlin.glb"
+        alt="Tokyo Urban District Massing and Street Network" camera-controls touch-action="pan-y"
+        camera-orbit="35deg 58deg 105%" min-camera-orbit="auto 15deg auto" max-camera-orbit="auto 85deg auto"
+        tone-mapping="neutral" shadow-intensity="1.2" shadow-softness="0.8" exposure="1.05" environment-image="neutral">
 
         <!-- Channel 01 Hotspot -->
-        <button class="hotspot" slot="hotspot-1"
-          data-position="0.015m 0.008m 0.010m"
-          data-normal="0m 1m 0m"
-          data-audio="assets/audio/ch1.mp3"
-          data-info="CH1 · ABLETON PUSH FIELD CAPTURE">
+        <button class="hotspot" slot="hotspot-1" data-position="0.015m 0.008m 0.010m" data-normal="0m 1m 0m"
+          data-audio="assets/audio/ch1.mp3" data-info="CH1 · ABLETON PUSH FIELD CAPTURE">
           <span class="pulse-dot"></span> CH1
         </button>
 
         <!-- Channel 02 Hotspot -->
-        <button class="hotspot" slot="hotspot-2"
-          data-position="-0.012m 0.008m -0.008m"
-          data-normal="0m 1m 0m"
-          data-audio="assets/audio/ch2.mp3"
-          data-info="CH2 · ABLETON PUSH FIELD CAPTURE">
+        <button class="hotspot" slot="hotspot-2" data-position="-0.012m 0.008m -0.008m" data-normal="0m 1m 0m"
+          data-audio="assets/audio/ch2.mp3" data-info="CH2 · ABLETON PUSH FIELD CAPTURE">
           <span class="pulse-dot"></span> CH2
         </button>
 
         <!-- Channel 03 Hotspot -->
-        <button class="hotspot" slot="hotspot-3"
-          data-position="0.004m 0.012m -0.004m"
-          data-normal="0m 1m 0m"
-          data-audio="assets/audio/ch3.mp3"
-          data-info="CH3 · MOBILE TELEMETRY → SUNO SYNTHESIS">
+        <button class="hotspot" slot="hotspot-3" data-position="0.004m 0.012m -0.004m" data-normal="0m 1m 0m"
+          data-audio="assets/audio/ch3.mp3" data-info="CH3 · MOBILE TELEMETRY → SUNO SYNTHESIS">
           <span class="pulse-dot"></span> CH3
         </button>
 
         <!-- Channel 04 Hotspot -->
-        <button class="hotspot" slot="hotspot-4"
-          data-position="-0.006m 0.008m 0.014m"
-          data-normal="0m 1m 0m"
-          data-audio="assets/audio/ch4.mp3"
-          data-info="CH4 · MOBILE TELEMETRY → SUNO SYNTHESIS">
+        <button class="hotspot" slot="hotspot-4" data-position="-0.006m 0.008m 0.014m" data-normal="0m 1m 0m"
+          data-audio="assets/audio/ch4.mp3" data-info="CH4 · MOBILE TELEMETRY → SUNO SYNTHESIS">
           <span class="pulse-dot"></span> CH4
         </button>
       </model-viewer>
@@ -329,22 +310,10 @@
         <input type="file" id="upload-ring-glb" accept=".glb,.gltf" />
       </div>
 
-      <model-viewer
-        id="mv-ring"
-        src="assets/models/example_berlin_ring.glb"
-        alt="Generative MultiPipe Silver Ring Artifact"
-        ar
-        ar-modes="webxr scene-viewer quick-look"
-        camera-controls
-        touch-action="pan-y"
-        auto-rotate
-        auto-rotate-delay="1500"
-        rotation-per-second="18deg"
-        camera-orbit="25deg 72deg 115%"
-        tone-mapping="neutral"
-        shadow-intensity="1.4"
-        exposure="1.15"
-        environment-image="neutral">
+      <model-viewer id="mv-ring" src="assets/models/Ring_00.glb" alt="Generative MultiPipe Silver Ring Artifact" ar
+        ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" auto-rotate
+        auto-rotate-delay="1500" rotation-per-second="18deg" camera-orbit="25deg 72deg 115%" tone-mapping="neutral"
+        shadow-intensity="1.4" exposure="1.15" environment-image="neutral">
 
         <button slot="ar-button" class="action-btn" style="position:absolute; bottom:18px; right:18px;">
           VIEW IN AR
@@ -442,4 +411,5 @@
     });
   </script>
 </body>
+
 </html>
