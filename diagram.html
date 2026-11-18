@@ -88,7 +88,7 @@
 <body>
 
 <div id="app-wrapper">
-    <!-- Top Header & Export Toolbar -->
+    <!-- Top Header & Controls -->
     <header class="flex flex-wrap items-center justify-between gap-3 px-5 py-2.5 bg-neutral-950/95 border-b border-neutral-800/80 z-20 shrink-0">
         <div class="flex items-center gap-3">
             <span class="w-2.5 h-2.5 rounded-sm bg-[#dc2626] inline-block shadow-[0_0_8px_#dc2626]"></span>
@@ -102,12 +102,6 @@
         <div class="flex flex-wrap items-center gap-2">
             <button id="btn-toggle-flow" class="px-3 py-1.5 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-700/80 text-[11px] text-red-400 transition">
                 Data Flow: LIVE
-            </button>
-            <button id="btn-export-svg" class="px-3 py-1.5 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-700/80 text-[11px] text-neutral-200 transition">
-                ↓ Export SVG
-            </button>
-            <button id="btn-export-png" class="px-3.5 py-1.5 rounded-lg bg-[#dc2626] hover:bg-[#ef4444] text-[11px] font-semibold text-white transition shadow-lg shadow-red-950/50">
-                ↓ Export High-Res PNG
             </button>
         </div>
     </header>
@@ -547,11 +541,6 @@
     </footer>
 </div>
 
-<!-- Non-blocking Toast Notification -->
-<div id="toast-box" class="fixed top-16 right-6 z-50 hidden px-4 py-2 rounded-lg bg-neutral-900/95 border border-neutral-700 text-xs text-neutral-200 shadow-2xl">
-    <span id="toast-msg">Exported</span>
-</div>
-
 <script>
 (function () {
     const svgEl = document.getElementById("architecture-svg");
@@ -562,22 +551,9 @@
     const inspectorDesc = document.getElementById("inspector-desc");
     const btnResetFocus = document.getElementById("btn-reset-focus");
     const btnToggleFlow = document.getElementById("btn-toggle-flow");
-    const btnExportSvg = document.getElementById("btn-export-svg");
-    const btnExportPng = document.getElementById("btn-export-png");
-    const toastBox = document.getElementById("toast-box");
-    const toastMsg = document.getElementById("toast-msg");
 
     let lockedNodeId = null;
     let isFlowAnimating = true;
-
-    function showToast(msg) {
-        toastMsg.textContent = msg;
-        toastBox.classList.remove("hidden");
-        clearTimeout(showToast._timer);
-        showToast._timer = setTimeout(() => {
-            toastBox.classList.add("hidden");
-        }, 3200);
-    }
 
     // Build adjacency map for highlighting connected upstream/downstream paths
     function focusNode(targetId) {
@@ -672,77 +648,6 @@
         btnToggleFlow.textContent = isFlowAnimating ? "Data Flow: LIVE" : "Data Flow: STATIC";
         btnToggleFlow.classList.toggle("text-red-400", isFlowAnimating);
         btnToggleFlow.classList.toggle("text-neutral-400", !isFlowAnimating);
-    });
-
-    // ============================================================================
-    // DETERMINISTIC HIGH-RES SVG & PNG EXPORT FOR NOTION / PRESENTATIONS
-    // ============================================================================
-    function getCleanSerializedSVG() {
-        const clone = svgEl.cloneNode(true);
-        clone.setAttribute("width", "3200");
-        clone.setAttribute("height", "1680");
-        // Strip transient interactive dimming or animation overlays for crisp static print/Notion image
-        clone.querySelectorAll(".wire-pulse").forEach((el) => el.remove());
-        clone.querySelectorAll(".dimmed").forEach((el) => el.classList.remove("dimmed"));
-        const serializer = new XMLSerializer();
-        let source = serializer.serializeToString(clone);
-        if (!source.match(/^<svg[^>]+xmlns="http\:\/\/www\.w3\.org\/2000\/svg"/)) {
-            source = source.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
-        }
-        return '<?xml version="1.0" standalone="no"?>\r\n' + source;
-    }
-
-    btnExportSvg.addEventListener("click", () => {
-        try {
-            const svgData = getCleanSerializedSVG();
-            const blob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = "tokyo_system_architecture_diagram.svg";
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            showToast("Downloaded deterministic vector SVG: tokyo_system_architecture_diagram.svg");
-        } catch (err) {
-            showToast("SVG export error.");
-        }
-    });
-
-    btnExportPng.addEventListener("click", () => {
-        try {
-            const svgData = getCleanSerializedSVG();
-            const svgBlob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
-            const url = URL.createObjectURL(svgBlob);
-
-            const img = new Image();
-            img.onload = function () {
-                const exportCanvas = document.createElement("canvas");
-                exportCanvas.width = 3200; // 2x Retina 1600x840 resolution
-                exportCanvas.height = 1680;
-                const eCtx = exportCanvas.getContext("2d");
-                eCtx.fillStyle = "#080808";
-                eCtx.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
-                eCtx.drawImage(img, 0, 0, exportCanvas.width, exportCanvas.height);
-
-                exportCanvas.toBlob((pngBlob) => {
-                    const pngUrl = URL.createObjectURL(pngBlob);
-                    const a = document.createElement("a");
-                    a.href = pngUrl;
-                    a.download = "tokyo_system_architecture_diagram_3200px.png";
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                    URL.revokeObjectURL(pngUrl);
-                    URL.revokeObjectURL(url);
-                    showToast("Downloaded 3200×1680px PNG ready for Notion /embed or /image.");
-                }, "image/png");
-            };
-            img.src = url;
-        } catch (err) {
-            showToast("PNG export error.");
-        }
     });
 })();
 </script>
