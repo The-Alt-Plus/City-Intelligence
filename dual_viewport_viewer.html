@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CITY INTELLIGENCE TOKYO · Dual-Viewport Acoustic & Artifact Viewer</title>
+  <!-- Google model-viewer v4.4.0 -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.4.0/model-viewer.min.js"></script>
+  <style>
+    :root {
+      --bg-canvas: #121214;
+      --bg-panel-left: #56585c;
+      --bg-panel-right: #0d0e11;
+      --hud-bg: rgba(18, 18, 22, 0.88);
+      --border-subtle: rgba(255, 255, 255, 0.14);
+      --accent-vermilion: #e04f33;
+      --text-primary: #f2f2f5;
+      --text-secondary: #a2a4ac;
+      --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      overflow-x: hidden;
+    }
+
+    /* Asymmetric Two-Window Split Grid matching Notion / Exhibition Layout */
+    .split-viewport-grid {
+      display: grid;
+      grid-template-columns: 2.15fr 1fr;
+      gap: 24px;
+      width: 100%;
+      max-width: 1640px;
+      height: calc(100vh - 48px);
+      min-height: 540px;
+      max-height: 860px;
+    }
+
+    .viewport-window {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+    }
+
+    /* Window 01: Landscape Urban Acoustic Map */
+    .window-map {
+      background-color: var(--bg-panel-left);
+    }
+
+    /* Window 02: Portrait Parametric Ring Artifact */
+    .window-ring {
+      background-color: var(--bg-panel-right);
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 100%;
+      --poster-color: transparent;
+      --progress-bar-color: var(--accent-vermilion);
+    }
+
+    /* Top-Left Architectural HUD */
+    .hud-header {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 10;
+      pointer-events: none;
+      background: var(--hud-bg);
+      backdrop-filter: blur(8px);
+      border-left: 2px solid var(--accent-vermilion);
+      padding: 10px 14px;
+    }
+
+    .hud-header h1 {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      font-weight: 600;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .hud-header p {
+      font-size: 9px;
+      color: var(--text-secondary);
+      margin-top: 4px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* Top-Right Mode / Sync Indicators */
+    .window-controls {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      z-index: 10;
+      display: flex;
+      gap: 6px;
+    }
+
+    .badge-btn {
+      background: var(--hud-bg);
+      border: 1px solid #2e2e36;
+      color: var(--text-secondary);
+      font-family: inherit;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      padding: 7px 11px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-transform: uppercase;
+    }
+
+    .badge-btn:hover,
+    .badge-btn.active {
+      border-color: var(--accent-vermilion);
+      color: #ffffff;
+      background: rgba(224, 79, 51, 0.18);
+    }
+
+    /* 3D Spatial Audio Hotspot Pins */
+    .hotspot {
+      background: rgba(12, 12, 16, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      color: #ffffff;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .hotspot:hover,
+    .hotspot.active {
+      background: var(--accent-vermilion);
+      border-color: #ff8c75;
+      transform: scale(1.08);
+    }
+
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-vermilion);
+    }
+
+    .hotspot.active .pulse-dot {
+      background: #ffffff;
+      box-shadow: 0 0 8px #ffffff;
+    }
+
+    /* Bottom Telemetry / Instruction Strip */
+    .hud-footer {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      right: 18px;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: none;
+    }
+
+    .telemetry-pill {
+      pointer-events: auto;
+      background: var(--hud-bg);
+      border: 1px solid #2a2a32;
+      padding: 7px 12px;
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      color: #d4d4dc;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-transform: uppercase;
+    }
+
+    .action-btn {
+      pointer-events: auto;
+      background: var(--hud-bg);
+      border: 1px solid #383842;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      padding: 7px 12px;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: border-color 0.2s ease;
+    }
+
+    .action-btn:hover {
+      border-color: var(--accent-vermilion);
+    }
+
+    #stop-audio-btn {
+      display: none;
+      padding: 2px 7px;
+      font-size: 8px;
+    }
+
+    /* Hidden Local File Inputs for Student Live Preview */
+    input[type="file"] {
+      display: none;
+    }
+
+    /* Responsive Collapse for Mobile / Narrow Notion Columns */
+    @media (max-width: 960px) {
+      body {
+        padding: 12px;
+      }
+      .split-viewport-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 55vh 55vh;
+        height: auto;
+        max-height: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="split-viewport-grid">
+    <!-- ===================================================================
+         WINDOW 01: LANDSCAPE URBAN ACOUSTIC TOPOLOGY (LEFT PANEL)
+         =================================================================== -->
+    <section class="viewport-window window-map">
+      <div class="hud-header">
+        <h1 id="team-title">CITY INTELLIGENCE TOKYO · TEAM 01</h1>
+        <p id="team-subtitle">URBAN ACOUSTIC TOPOLOGY &amp; PARAMETRIC ARTIFACT</p>
+      </div>
+
+      <div class="window-controls">
+        <button class="badge-btn active" id="focus-map-btn">01 · AREA MAP</button>
+        <label class="badge-btn" for="upload-map-glb" title="Preview local .glb in browser">LOAD MAP .GLB</label>
+        <input type="file" id="upload-map-glb" accept=".glb,.gltf" />
+      </div>
+
+      <model-viewer
+        id="mv-map"
+        src="assets/models/example_berlin.glb"
+        alt="Tokyo Urban District Massing and Street Network"
+        camera-controls
+        touch-action="pan-y"
+        camera-orbit="35deg 58deg 105%"
+        min-camera-orbit="auto 15deg auto"
+        max-camera-orbit="auto 85deg auto"
+        tone-mapping="neutral"
+        shadow-intensity="1.2"
+        shadow-softness="0.8"
+        exposure="1.05"
+        environment-image="neutral">
+
+        <!-- Channel 01 Hotspot -->
+        <button class="hotspot" slot="hotspot-1"
+          data-position="0.015m 0.008m 0.010m"
+          data-normal="0m 1m 0m"
+          data-audio="assets/audio/ch1.mp3"
+          data-info="CH1 · ABLETON PUSH FIELD CAPTURE">
+          <span class="pulse-dot"></span> CH1
+        </button>
+
+        <!-- Channel 02 Hotspot -->
+        <button class="hotspot" slot="hotspot-2"
+          data-position="-0.012m 0.008m -0.008m"
+          data-normal="0m 1m 0m"
+          data-audio="assets/audio/ch2.mp3"
+          data-info="CH2 · ABLETON PUSH FIELD CAPTURE">
+          <span class="pulse-dot"></span> CH2
+        </button>
+
+        <!-- Channel 03 Hotspot -->
+        <button class="hotspot" slot="hotspot-3"
+          data-position="0.004m 0.012m -0.004m"
+          data-normal="0m 1m 0m"
+          data-audio="assets/audio/ch3.mp3"
+          data-info="CH3 · MOBILE TELEMETRY → SUNO SYNTHESIS">
+          <span class="pulse-dot"></span> CH3
+        </button>
+
+        <!-- Channel 04 Hotspot -->
+        <button class="hotspot" slot="hotspot-4"
+          data-position="-0.006m 0.008m 0.014m"
+          data-normal="0m 1m 0m"
+          data-audio="assets/audio/ch4.mp3"
+          data-info="CH4 · MOBILE TELEMETRY → SUNO SYNTHESIS">
+          <span class="pulse-dot"></span> CH4
+        </button>
+      </model-viewer>
+
+      <div class="hud-footer">
+        <div class="telemetry-pill">
+          <span id="status-readout">DRAG TO ORBIT · CLICK CH1–CH4 PIN TO AUDITION STREAM</span>
+          <button class="action-btn" id="stop-audio-btn">STOP</button>
+        </div>
+        <button class="action-btn" id="reset-map-cam">RESET VIEW</button>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         WINDOW 02: PORTRAIT PARAMETRIC RING ARTIFACT (RIGHT PANEL)
+         =================================================================== -->
+    <section class="viewport-window window-ring">
+      <div class="window-controls">
+        <button class="badge-btn active" id="focus-ring-btn">02 · RING ARTIFACT</button>
+        <label class="badge-btn" for="upload-ring-glb" title="Preview local ring .glb in browser">LOAD RING .GLB</label>
+        <input type="file" id="upload-ring-glb" accept=".glb,.gltf" />
+      </div>
+
+      <model-viewer
+        id="mv-ring"
+        src="assets/models/example_berlin_ring.glb"
+        alt="Generative MultiPipe Silver Ring Artifact"
+        ar
+        ar-modes="webxr scene-viewer quick-look"
+        camera-controls
+        touch-action="pan-y"
+        auto-rotate
+        auto-rotate-delay="1500"
+        rotation-per-second="18deg"
+        camera-orbit="25deg 72deg 115%"
+        tone-mapping="neutral"
+        shadow-intensity="1.4"
+        exposure="1.15"
+        environment-image="neutral">
+
+        <button slot="ar-button" class="action-btn" style="position:absolute; bottom:18px; right:18px;">
+          VIEW IN AR
+        </button>
+      </model-viewer>
+
+      <div class="hud-footer">
+        <div class="telemetry-pill">
+          <span>SUBD MULTIPIPE · 3D PRINTED METAL</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <audio id="audio-engine" preload="auto"></audio>
+
+  <script>
+    const mvMap = document.getElementById('mv-map');
+    const mvRing = document.getElementById('mv-ring');
+    const audioEngine = document.getElementById('audio-engine');
+    const statusReadout = document.getElementById('status-readout');
+    const stopAudioBtn = document.getElementById('stop-audio-btn');
+    const hotspots = mvMap.querySelectorAll('.hotspot');
+
+    // 1. Multi-Team URL Query Parameter Support (?team=team-01)
+    const params = new URLSearchParams(window.location.search);
+    const teamParam = params.get('team');
+    if (teamParam) {
+      const formattedTeam = teamParam.replace('-', ' ').toUpperCase();
+      document.getElementById('team-title').textContent = `CITY INTELLIGENCE TOKYO · ${formattedTeam}`;
+      mvMap.src = `assets/teams/${teamParam}/map.glb`;
+      mvRing.src = `assets/teams/${teamParam}/ring.glb`;
+      hotspots.forEach((pin, idx) => {
+        pin.dataset.audio = `assets/teams/${teamParam}/ch${idx + 1}.mp3`;
+      });
+    }
+
+    // 2. Spatial Audio Hotspot Interaction
+    hotspots.forEach((pin) => {
+      pin.addEventListener('click', () => {
+        const isAlreadyActive = pin.classList.contains('active');
+        hotspots.forEach((p) => p.classList.remove('active'));
+
+        if (isAlreadyActive) {
+          stopAudioStream();
+          return;
+        }
+
+        pin.classList.add('active');
+        mvMap.cameraTarget = pin.dataset.position;
+        audioEngine.src = pin.dataset.audio;
+        audioEngine.play().catch(() => {
+          statusReadout.textContent = `${pin.dataset.info} (AUDIO FILE PENDING)`;
+        });
+        statusReadout.textContent = pin.dataset.info;
+        stopAudioBtn.style.display = 'inline-block';
+
+        // Accelerate ring rotation subtly while an acoustic channel is auditioning
+        mvRing.setAttribute('rotation-per-second', '36deg');
+      });
+    });
+
+    function stopAudioStream() {
+      audioEngine.pause();
+      audioEngine.currentTime = 0;
+      hotspots.forEach((p) => p.classList.remove('active'));
+      statusReadout.textContent = 'DRAG TO ORBIT · CLICK CH1–CH4 PIN TO AUDITION STREAM';
+      stopAudioBtn.style.display = 'none';
+      mvRing.setAttribute('rotation-per-second', '18deg');
+    }
+
+    stopAudioBtn.addEventListener('click', stopAudioStream);
+    audioEngine.addEventListener('ended', stopAudioStream);
+
+    // 3. Reset Map Camera Orbit
+    document.getElementById('reset-map-cam').addEventListener('click', () => {
+      mvMap.cameraTarget = 'auto auto auto';
+      mvMap.cameraOrbit = '35deg 58deg 105%';
+    });
+
+    // 4. Client-Side Local .GLB Preview Loader (For Student Testing Before Git Push)
+    document.getElementById('upload-map-glb').addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        mvMap.src = URL.createObjectURL(file);
+        statusReadout.textContent = `LOCAL PREVIEW: ${file.name.toUpperCase()}`;
+      }
+    });
+
+    document.getElementById('upload-ring-glb').addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        mvRing.src = URL.createObjectURL(file);
+      }
+    });
+  </script>
+</body>
+</html>
