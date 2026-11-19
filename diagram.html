@@ -115,7 +115,7 @@
             <div class="flex items-center gap-3">
                 <span class="w-2.5 h-2.5 rounded-sm bg-[#dc2626] inline-block shadow-[0_0_8px_#dc2626]"></span>
                 <div>
-                    <h1 class="text-xs sm:text-sm font-semibold tracking-widest text-neutral-100 uppercase">
+                    <h1 class="text-sm sm:text-base font-semibold tracking-widest text-neutral-100 uppercase">
                         CITY INTELLIGENCE TOKYO · SYSTEM ARCHITECTURE PIPELINE
                     </h1>
                 </div>
@@ -123,7 +123,7 @@
 
             <div class="flex flex-wrap items-center gap-2">
                 <button id="btn-toggle-flow"
-                    class="px-3 py-1.5 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-700/80 text-[11px] text-red-400 transition">
+                    class="px-3.5 py-1.5 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-700/80 text-xs text-red-400 transition">
                     Data Flow: LIVE
                 </button>
             </div>
@@ -172,36 +172,36 @@
                 <!-- Top Technical Legend & Column Headers -->
                 <g font-family="'JetBrains Mono', Consolas, monospace">
                     <!-- Column 1 Header -->
-                    <text x="48" y="42" fill="#737373" font-size="10" font-weight="600" letter-spacing="1.5">01 // DATA
+                    <text x="48" y="42" fill="#8a8a8a" font-size="11.5" font-weight="600" letter-spacing="1.2">01 // DATA
                         ACQUISITION</text>
                     <line x1="48" y1="50" x2="480" y2="50" stroke="#262626" stroke-width="1" />
 
                     <!-- Column 2 Header -->
-                    <text x="515" y="42" fill="#737373" font-size="10" font-weight="600" letter-spacing="1.5">02 //
+                    <text x="515" y="42" fill="#8a8a8a" font-size="11.5" font-weight="600" letter-spacing="1.2">02 //
                         AUDIO-TO-MIDI BRIDGE</text>
                     <line x1="515" y1="50" x2="775" y2="50" stroke="#262626" stroke-width="1" />
 
                     <!-- Column 3 Header -->
-                    <text x="815" y="42" fill="#ef4444" font-size="10" font-weight="700" letter-spacing="1.5">03 //
+                    <text x="815" y="42" fill="#ef4444" font-size="11.5" font-weight="700" letter-spacing="1.2">03 //
                         RHINO + GRASSHOPPER COMPUTATIONAL ENGINE</text>
                     <line x1="815" y1="50" x2="1275" y2="50" stroke="#dc2626" stroke-opacity="0.5" stroke-width="1" />
 
                     <!-- Column 4 Header -->
-                    <text x="1310" y="42" fill="#737373" font-size="10" font-weight="600" letter-spacing="1.5">04 //
+                    <text x="1310" y="42" fill="#8a8a8a" font-size="11.5" font-weight="600" letter-spacing="1.2">04 //
                         DEPLOYMENT &amp; OUTPUTS</text>
                     <line x1="1310" y1="50" x2="1555" y2="50" stroke="#262626" stroke-width="1" />
 
                     <!-- Stream Legend (Top Right) -->
-                    <g transform="translate(1035, 18)">
-                        <circle cx="0" cy="4" r="3.5" fill="#999999" />
-                        <text x="10" y="8" fill="#a3a3a3" font-size="9.5">Geospatial XML/OSM</text>
+                    <g transform="translate(955, 16)">
+                        <circle cx="0" cy="4" r="4" fill="#999999" />
+                        <text x="10" y="8" fill="#b5b5b5" font-size="11">Geospatial XML/OSM</text>
 
-                        <circle cx="135" cy="4" r="3.5" fill="#dc2626" />
-                        <text x="145" y="8" fill="#a3a3a3" font-size="9.5">4-Ch Audio / MIDI CC</text>
+                        <circle cx="160" cy="4" r="4" fill="#dc2626" />
+                        <text x="170" y="8" fill="#b5b5b5" font-size="11">4-Ch Audio / MIDI CC</text>
 
-                        <line x1="278" y1="4" x2="298" y2="4" stroke="#f87171" stroke-width="1.5"
+                        <line x1="330" y1="4" x2="352" y2="4" stroke="#f87171" stroke-width="1.8"
                             stroke-dasharray="4 3" />
-                        <text x="305" y="8" fill="#a3a3a3" font-size="9.5">Direct Web Audio Link</text>
+                        <text x="360" y="8" fill="#b5b5b5" font-size="11">Direct Web Audio Link</text>
                     </g>
                 </g>
 
@@ -217,20 +217,20 @@
                     <path d="M 810 750 L 810 770 L 830 770" fill="none" stroke="#ef4444" stroke-width="2.5" />
                     <path d="M 1260 770 L 1280 770 L 1280 750" fill="none" stroke="#ef4444" stroke-width="2.5" />
 
-                    <rect x="830" y="123" width="215" height="22" rx="4" fill="#1a0909" stroke="#dc2626"
+                    <rect x="830" y="122" width="235" height="24" rx="4" fill="#1a0909" stroke="#dc2626"
                         stroke-width="1" />
-                    <text x="937" y="138" text-anchor="middle" fill="#f87171" font-family="'JetBrains Mono', monospace"
-                        font-size="11" font-weight="700" letter-spacing="1">
+                    <text x="947" y="138" text-anchor="middle" fill="#f87171" font-family="'JetBrains Mono', monospace"
+                        font-size="12.5" font-weight="700" letter-spacing="1">
                         RHINO / GRASSHOPPER
                     </text>
 
                     <!-- Internal Sub-Zone Dividers inside GH -->
                     <line x1="828" y1="455" x2="1262" y2="455" stroke="#262626" stroke-width="1"
                         stroke-dasharray="4 4" />
-                    <text x="835" y="446" fill="#525252" font-family="'JetBrains Mono', monospace" font-size="9"
-                        letter-spacing="1">TOP BRANCH: GEOSPATIAL URBAN CONTEXT</text>
-                    <text x="835" y="470" fill="#525252" font-family="'JetBrains Mono', monospace" font-size="9"
-                        letter-spacing="1">BOTTOM BRANCH: REAL-TIME MIDI &amp; ARTIFACT SYNTHESIS</text>
+                    <text x="835" y="445" fill="#737373" font-family="'JetBrains Mono', monospace" font-size="10.5"
+                        letter-spacing="0.8">TOP BRANCH: GEOSPATIAL URBAN CONTEXT</text>
+                    <text x="835" y="472" fill="#737373" font-family="'JetBrains Mono', monospace" font-size="10.5"
+                        letter-spacing="0.8">BOTTOM BRANCH: REAL-TIME MIDI &amp; ARTIFACT SYNTHESIS</text>
                 </g>
 
                 <!-- ====================================================================== -->
@@ -284,10 +284,10 @@
                         marker-end="url(#arrow-dashed)" />
                     <path d="M 595 545 L 595 92 L 1395 92 L 1395 235" stroke="#fecaca" stroke-width="2"
                         class="wire-pulse" />
-                    <rect x="915" y="80" width="250" height="20" rx="4" fill="#080808" stroke="#dc2626"
+                    <rect x="895" y="79" width="290" height="22" rx="4" fill="#080808" stroke="#dc2626"
                         stroke-opacity="0.55" stroke-width="0.8" />
                     <text x="1040" y="94" text-anchor="middle" fill="#fca5a5" font-family="'JetBrains Mono', monospace"
-                        font-size="9.5">
+                        font-size="11">
                         DIRECT AUDIO TRACK STREAM (.MP3 / .WAV)
                     </text>
 
@@ -312,7 +312,7 @@
                         stroke-width="1.8" stroke-opacity="0.85" marker-end="url(#arrow-out)" />
                     <path d="M 1255 295 L 1315 295" stroke="#ffffff" stroke-width="2" class="wire-pulse" />
 
-                    <!-- 14. C4 (Generative Script) -> D2 (3D Web Viewer: Ring Artifact) -->
+                    <!-- 14. C4 (Generative Script) -> D2 (3D Web Viewer: Physical Artifact) -->
                     <path id="wire-C4-D2" data-from="C4" data-to="D2" d="M 1255 615 C 1285 615, 1285 485, 1315 485"
                         stroke="#d4d4d4" stroke-width="1.8" stroke-opacity="0.85" marker-end="url(#arrow-out)" />
                     <path d="M 1255 615 C 1285 615, 1285 485, 1315 485" stroke="#ffffff" stroke-width="2"
@@ -342,75 +342,75 @@
                     <!-- Node A1: OpenStreetMap -->
                     <g class="arch-node" id="node-A1" data-id="A1" data-title="A1 · OpenStreetMap (OSM) City Area"
                         data-tech="Export bounding box from openstreetmap.org or Overpass Turbo as raw .osm XML containing building footprints and street vectors.">
-                        <rect class="node-card" x="265" y="165" width="210" height="96" rx="8" fill="#111111"
+                        <rect class="node-card" x="265" y="162" width="210" height="104" rx="8" fill="#111111"
                             stroke="#737373" stroke-width="1.3" />
-                        <rect x="265" y="165" width="210" height="22" rx="8" fill="#242424" />
-                        <text x="277" y="180" fill="#d4d4d4" font-size="9.5" font-weight="700">A1 · GEOSPATIAL
+                        <rect x="265" y="162" width="210" height="24" rx="8" fill="#242424" />
+                        <text x="277" y="178" fill="#d4d4d4" font-size="11" font-weight="700">A1 · GEOSPATIAL
                             BASE</text>
-                        <text x="277" y="203" fill="#f5f5f5" font-size="11" font-weight="600">OpenStreetMap (OSM)</text>
-                        <text x="277" y="220" fill="#a3a3a3" font-size="9.5">Defining Tokyo city area</text>
-                        <text x="277" y="234" fill="#a3a3a3" font-size="9.5">&amp; downloading .osm file</text>
-                        <text x="277" y="251" fill="#999999" font-size="8.5">FORMAT: .OSM (XML)</text>
+                        <text x="277" y="203" fill="#f5f5f5" font-size="12.5" font-weight="600">OpenStreetMap (OSM)</text>
+                        <text x="277" y="221" fill="#a3a3a3" font-size="11">Defining Tokyo city area</text>
+                        <text x="277" y="237" fill="#a3a3a3" font-size="11">&amp; downloading .osm file</text>
+                        <text x="277" y="256" fill="#999999" font-size="10">FORMAT: .OSM (XML)</text>
                     </g>
 
                     <!-- Node A2_raw: Google Maps Locations -->
                     <g class="arch-node" id="node-A2_raw" data-id="A2_raw" data-title="A2a · Google Maps Field Pinning"
                         data-tech="Log exact GPS latitude/longitude coordinates on-site in Tokyo at each of the 4 acoustic recording points.">
-                        <rect class="node-card" x="45" y="325" width="180" height="80" rx="8" fill="#111111"
+                        <rect class="node-card" x="45" y="320" width="180" height="90" rx="8" fill="#111111"
                             stroke="#666666" stroke-width="1.1" />
-                        <text x="57" y="346" fill="#d4d4d4" font-size="9" font-weight="700">A2a · FIELD GPS LOG</text>
-                        <text x="57" y="365" fill="#f5f5f5" font-size="10.5" font-weight="600">Google Maps</text>
-                        <text x="57" y="380" fill="#a3a3a3" font-size="9.5">Locations of field</text>
-                        <text x="57" y="393" fill="#a3a3a3" font-size="9.5">audio recordings</text>
+                        <text x="57" y="341" fill="#d4d4d4" font-size="10.5" font-weight="700">A2a · FIELD GPS LOG</text>
+                        <text x="57" y="362" fill="#f5f5f5" font-size="12.5" font-weight="600">Google Maps</text>
+                        <text x="57" y="380" fill="#a3a3a3" font-size="11">Locations of field</text>
+                        <text x="57" y="395" fill="#a3a3a3" font-size="11">audio recordings</text>
                     </g>
 
                     <!-- Node A2: Google My Maps Tagged XML -->
                     <g class="arch-node" id="node-A2" data-id="A2" data-title="A2b · Google My Maps Tagged Locations"
                         data-tech="Organize pins into a custom Google My Maps layer, attach metadata tags (CH1–CH4, dB, location name), and export as KML/XML.">
-                        <rect class="node-card" x="265" y="315" width="210" height="100" rx="8" fill="#111111"
+                        <rect class="node-card" x="265" y="312" width="210" height="108" rx="8" fill="#111111"
                             stroke="#737373" stroke-width="1.3" />
-                        <rect x="265" y="315" width="210" height="22" rx="8" fill="#242424" />
-                        <text x="277" y="330" fill="#d4d4d4" font-size="9.5" font-weight="700">A2b · TAGGED PINS</text>
-                        <text x="277" y="352" fill="#f5f5f5" font-size="11" font-weight="600">Google My Maps</text>
-                        <text x="277" y="369" fill="#a3a3a3" font-size="9.5">Adding specific metadata</text>
-                        <text x="277" y="383" fill="#a3a3a3" font-size="9.5">tags to each location</text>
-                        <text x="277" y="402" fill="#999999" font-size="8.5">EXPORT: .KML / .XML</text>
+                        <rect x="265" y="312" width="210" height="24" rx="8" fill="#242424" />
+                        <text x="277" y="328" fill="#d4d4d4" font-size="11" font-weight="700">A2b · TAGGED PINS</text>
+                        <text x="277" y="352" fill="#f5f5f5" font-size="12.5" font-weight="600">Google My Maps</text>
+                        <text x="277" y="370" fill="#a3a3a3" font-size="11">Adding specific metadata</text>
+                        <text x="277" y="386" fill="#a3a3a3" font-size="11">tags to each location</text>
+                        <text x="277" y="407" fill="#999999" font-size="10">EXPORT: .KML / .XML</text>
                     </g>
 
                     <!-- Node A3: Audio Recordings with Ableton Move -->
                     <g class="arch-node" id="node-A3" data-id="A3"
                         data-title="A3 · Hardware Field Capture (Ableton Move)"
                         data-tech="Direct multi-track environmental and rhythmic sampling recorded in Tokyo via Ableton Move hardware.">
-                        <rect class="node-card" x="45" y="510" width="190" height="88" rx="8" fill="#140b0b"
+                        <rect class="node-card" x="45" y="506" width="190" height="96" rx="8" fill="#140b0b"
                             stroke="#dc2626" stroke-width="1.3" />
-                        <rect x="45" y="510" width="190" height="22" rx="8" fill="#2e1010" />
-                        <text x="57" y="525" fill="#f87171" font-size="9.5" font-weight="700">A3 · HARDWARE AUDIO</text>
-                        <text x="57" y="548" fill="#f5f5f5" font-size="11" font-weight="600">Ableton Move</text>
-                        <text x="57" y="565" fill="#a3a3a3" font-size="9.5">Field audio recordings</text>
-                        <text x="57" y="584" fill="#ef4444" font-size="8.5">DIRECT STEM CAPTURE</text>
+                        <rect x="45" y="506" width="190" height="24" rx="8" fill="#2e1010" />
+                        <text x="57" y="522" fill="#f87171" font-size="11" font-weight="700">A3 · HARDWARE AUDIO</text>
+                        <text x="57" y="547" fill="#f5f5f5" font-size="12.5" font-weight="600">Ableton Move</text>
+                        <text x="57" y="566" fill="#a3a3a3" font-size="11">Field audio recordings</text>
+                        <text x="57" y="588" fill="#ef4444" font-size="10">DIRECT STEM CAPTURE</text>
                     </g>
 
                     <!-- Node A4: Audio Recordings with Cell Phone -->
                     <g class="arch-node" id="node-A4" data-id="A4" data-title="A4 · Mobile Field Capture (Cell Phone)"
                         data-tech="On-site ambient voice/sound capture recorded via smartphone at Tokyo street nodes.">
-                        <rect class="node-card" x="45" y="645" width="180" height="80" rx="8" fill="#140b0b"
+                        <rect class="node-card" x="45" y="640" width="180" height="90" rx="8" fill="#140b0b"
                             stroke="#b91c1c" stroke-width="1.1" />
-                        <text x="57" y="666" fill="#f87171" font-size="9" font-weight="700">A4 · MOBILE CAPTURE</text>
-                        <text x="57" y="685" fill="#f5f5f5" font-size="10.5" font-weight="600">Cell Phone</text>
-                        <text x="57" y="700" fill="#a3a3a3" font-size="9.5">Ambient field audio</text>
-                        <text x="57" y="713" fill="#a3a3a3" font-size="9.5">recordings (.wav/.m4a)</text>
+                        <text x="57" y="661" fill="#f87171" font-size="10.5" font-weight="700">A4 · MOBILE CAPTURE</text>
+                        <text x="57" y="682" fill="#f5f5f5" font-size="12.5" font-weight="600">Cell Phone</text>
+                        <text x="57" y="700" fill="#a3a3a3" font-size="11">Ambient field audio</text>
+                        <text x="57" y="715" fill="#a3a3a3" font-size="11">recordings (.wav/.m4a)</text>
                     </g>
 
                     <!-- Node A5: Tracks made in Suno -->
                     <g class="arch-node" id="node-A5" data-id="A5" data-title="A5 · Generative AI Audio (Suno)"
                         data-tech="Phone field recordings are uploaded as audio prompts into Suno to synthesize harmonic/rhythmic companion stems.">
-                        <rect class="node-card" x="265" y="640" width="210" height="90" rx="8" fill="#140b0b"
+                        <rect class="node-card" x="265" y="636" width="210" height="98" rx="8" fill="#140b0b"
                             stroke="#dc2626" stroke-width="1.3" />
-                        <rect x="265" y="640" width="210" height="22" rx="8" fill="#2e1010" />
-                        <text x="277" y="655" fill="#f87171" font-size="9.5" font-weight="700">A5 · AI SYNTHESIS</text>
-                        <text x="277" y="677" fill="#f5f5f5" font-size="11" font-weight="600">Tracks Made in Suno</text>
-                        <text x="277" y="694" fill="#a3a3a3" font-size="9.5">Synthesized based on</text>
-                        <text x="277" y="708" fill="#a3a3a3" font-size="9.5">cell phone recordings</text>
+                        <rect x="265" y="636" width="210" height="24" rx="8" fill="#2e1010" />
+                        <text x="277" y="652" fill="#f87171" font-size="11" font-weight="700">A5 · AI SYNTHESIS</text>
+                        <text x="277" y="677" fill="#f5f5f5" font-size="12.5" font-weight="600">Tracks Made in Suno</text>
+                        <text x="277" y="696" fill="#a3a3a3" font-size="11">Synthesized based on</text>
+                        <text x="277" y="712" fill="#a3a3a3" font-size="11">cell phone recordings</text>
                     </g>
 
                     <!-- COLUMN 2: AUDIO-TO-MIDI BRIDGE -->
@@ -418,29 +418,29 @@
                     <!-- Node B1: Ableton Live -->
                     <g class="arch-node" id="node-B1" data-id="B1" data-title="B1 · Ableton Live Multi-Channel DAW"
                         data-tech="Routes 4 Audio Channels into 4 MIDI Channels using the open-source audioToMidi plugin, streaming CC telemetry to loopMIDI and audio stems to Web Viewer 01.">
-                        <rect class="node-card" x="515" y="545" width="160" height="140" rx="8" fill="#160c0c"
+                        <rect class="node-card" x="515" y="540" width="160" height="150" rx="8" fill="#160c0c"
                             stroke="#dc2626" stroke-width="1.5" />
-                        <rect x="515" y="545" width="160" height="24" rx="8" fill="#331010" />
-                        <text x="527" y="561" fill="#fca5a5" font-size="9.5" font-weight="700">B1 · DAW ENGINE</text>
-                        <text x="527" y="585" fill="#ffffff" font-size="11.5" font-weight="700">Ableton Live</text>
-                        <text x="527" y="605" fill="#d4d4d4" font-size="9.5">• 4 Audio Channels</text>
-                        <text x="527" y="621" fill="#d4d4d4" font-size="9.5">• 4 MIDI Channels</text>
-                        <text x="527" y="639" fill="#ef4444" font-size="9.5" font-weight="600">• audioToMidi</text>
-                        <text x="536" y="652" fill="#a3a3a3" font-size="8.5">Opensource Plugin</text>
-                        <text x="527" y="673" fill="#f87171" font-size="8.5">↑ AUDIO TO VIEWER</text>
+                        <rect x="515" y="540" width="160" height="25" rx="8" fill="#331010" />
+                        <text x="527" y="557" fill="#fca5a5" font-size="11" font-weight="700">B1 · DAW ENGINE</text>
+                        <text x="527" y="582" fill="#ffffff" font-size="13" font-weight="700">Ableton Live</text>
+                        <text x="527" y="603" fill="#d4d4d4" font-size="11">• 4 Audio Channels</text>
+                        <text x="527" y="620" fill="#d4d4d4" font-size="11">• 4 MIDI Channels</text>
+                        <text x="527" y="639" fill="#ef4444" font-size="11" font-weight="600">• audioToMidi</text>
+                        <text x="536" y="654" fill="#a3a3a3" font-size="10">Opensource Plugin</text>
+                        <text x="527" y="677" fill="#f87171" font-size="10">↑ AUDIO TO VIEWER</text>
                     </g>
 
                     <!-- Node B2: loopMIDI -->
                     <g class="arch-node" id="node-B2" data-id="B2" data-title="B2 · loopMIDI Virtual Bus"
                         data-tech="Creates a zero-latency virtual loopback MIDI port on Windows (or IAC Driver on macOS) bridging Ableton Live MIDI out to Grasshopper.">
-                        <rect class="node-card" x="705" y="565" width="80" height="100" rx="8" fill="#160c0c"
+                        <rect class="node-card" x="703" y="562" width="84" height="106" rx="8" fill="#160c0c"
                             stroke="#dc2626" stroke-width="1.4" />
-                        <text x="745" y="592" text-anchor="middle" fill="#fca5a5" font-size="9" font-weight="700">B2 ·
+                        <text x="745" y="589" text-anchor="middle" fill="#fca5a5" font-size="10.5" font-weight="700">B2 ·
                             BUS</text>
-                        <text x="745" y="614" text-anchor="middle" fill="#ffffff" font-size="10.5"
+                        <text x="745" y="613" text-anchor="middle" fill="#ffffff" font-size="12"
                             font-weight="700">loopMIDI</text>
-                        <text x="745" y="632" text-anchor="middle" fill="#a3a3a3" font-size="8.5">Opensource</text>
-                        <text x="745" y="645" text-anchor="middle" fill="#a3a3a3" font-size="8.5">Virtual Port</text>
+                        <text x="745" y="633" text-anchor="middle" fill="#a3a3a3" font-size="10">Opensource</text>
+                        <text x="745" y="648" text-anchor="middle" fill="#a3a3a3" font-size="10">Virtual Port</text>
                     </g>
 
                     <!-- COLUMN 3: RHINO / GRASSHOPPER INTERNAL NODES -->
@@ -449,68 +449,68 @@
                     <g class="arch-node" id="node-C1" data-id="C1"
                         data-title="C1 · Python XML + OSM Geospatial Injector"
                         data-tech="Parses Google My Maps KML/XML coordinates (swapping Lon/Lat to Lat/Lon) and injects custom <node> tags into the downloaded OpenStreetMap .osm file.">
-                        <rect class="node-card" x="835" y="220" width="190" height="130" rx="8" fill="#121212"
+                        <rect class="node-card" x="832" y="216" width="196" height="138" rx="8" fill="#121212"
                             stroke="#858585" stroke-width="1.4" />
-                        <rect x="835" y="220" width="190" height="22" rx="8" fill="#262626" />
-                        <text x="847" y="235" fill="#e5e5e5" font-size="9" font-weight="700">C1 · PYTHON XML
+                        <rect x="832" y="216" width="196" height="24" rx="8" fill="#262626" />
+                        <text x="844" y="232" fill="#e5e5e5" font-size="10.5" font-weight="700">C1 · PYTHON XML
                             MERGER</text>
-                        <text x="847" y="257" fill="#ffffff" font-size="10.5" font-weight="700">Injection of XML</text>
-                        <text x="847" y="271" fill="#ffffff" font-size="10.5" font-weight="700">Google Maps
+                        <text x="844" y="256" fill="#ffffff" font-size="12" font-weight="700">Injection of XML</text>
+                        <text x="844" y="272" fill="#ffffff" font-size="12" font-weight="700">Google Maps
                             Locations</text>
-                        <text x="847" y="290" fill="#a3a3a3" font-size="9">Combines My Maps XML</text>
-                        <text x="847" y="303" fill="#a3a3a3" font-size="9">with OSM file coming</text>
-                        <text x="847" y="316" fill="#a3a3a3" font-size="9">from OpenStreetMap</text>
-                        <text x="847" y="338" fill="#a3a3a3" font-size="8.5">OUT: UNIFIED .OSM</text>
+                        <text x="844" y="292" fill="#a3a3a3" font-size="10.5">Combines My Maps XML</text>
+                        <text x="844" y="307" fill="#a3a3a3" font-size="10.5">with OSM file coming</text>
+                        <text x="844" y="322" fill="#a3a3a3" font-size="10.5">from OpenStreetMap</text>
+                        <text x="844" y="343" fill="#a3a3a3" font-size="10">OUT: UNIFIED .OSM</text>
                     </g>
 
                     <!-- Node C2: Audio Data Input to Audio Location in Area Map -->
                     <g class="arch-node" id="node-C2" data-id="C2" data-title="C2 · Area Map Spatial Audio Mapping"
                         data-tech="Projects the 4 live MIDI telemetry channels onto the geolocated Tokyo .osm coordinates (via Elk/Heron) to drive 3D sound fields & extruded building proximity.">
-                        <rect class="node-card" x="1068" y="235" width="187" height="120" rx="8" fill="#150d0d"
+                        <rect class="node-card" x="1065" y="230" width="193" height="128" rx="8" fill="#150d0d"
                             stroke="#dc2626" stroke-width="1.4" />
-                        <rect x="1068" y="235" width="187" height="22" rx="8" fill="#2e1111" />
-                        <text x="1080" y="250" fill="#fca5a5" font-size="9" font-weight="700">C2 · URBAN
+                        <rect x="1065" y="230" width="193" height="24" rx="8" fill="#2e1111" />
+                        <text x="1077" y="246" fill="#fca5a5" font-size="10.5" font-weight="700">C2 · URBAN
                             TELEMETRY</text>
-                        <text x="1080" y="273" fill="#ffffff" font-size="10.5" font-weight="700">Audio Data Input
+                        <text x="1077" y="270" fill="#ffffff" font-size="12" font-weight="700">Audio Data Input
                             to</text>
-                        <text x="1080" y="288" fill="#ffffff" font-size="10.5" font-weight="700">Location in Area
+                        <text x="1077" y="286" fill="#ffffff" font-size="12" font-weight="700">Location in Area
                             Map</text>
-                        <text x="1080" y="308" fill="#a3a3a3" font-size="9">Maps 4-Ch MIDI onto</text>
-                        <text x="1080" y="321" fill="#a3a3a3" font-size="9">geolocated Tokyo nodes</text>
-                        <text x="1080" y="342" fill="#f87171" font-size="8.5">OUT: CITY SCENE .GLB</text>
+                        <text x="1077" y="307" fill="#a3a3a3" font-size="10.5">Maps 4-Ch MIDI onto</text>
+                        <text x="1077" y="322" fill="#a3a3a3" font-size="10.5">geolocated Tokyo nodes</text>
+                        <text x="1077" y="344" fill="#f87171" font-size="10">OUT: CITY SCENE .GLB</text>
                     </g>
 
                     <!-- Node C3: Python Real-Time loopMIDI Listener -->
                     <g class="arch-node" id="node-C3" data-id="C3" data-title="C3 · Python Real-Time loopMIDI Listener"
                         data-tech="Non-blocking Windows Multimedia API (winmm.dll) receiver polling loopMIDI at 60 FPS with deadband filtering (Δ > 0.005) across Channels 1–4.">
-                        <rect class="node-card" x="835" y="545" width="190" height="130" rx="8" fill="#160c0c"
+                        <rect class="node-card" x="832" y="542" width="196" height="136" rx="8" fill="#160c0c"
                             stroke="#dc2626" stroke-width="1.4" />
-                        <rect x="835" y="545" width="190" height="22" rx="8" fill="#301010" />
-                        <text x="847" y="560" fill="#fca5a5" font-size="9" font-weight="700">C3 · PYTHON MIDI
+                        <rect x="832" y="542" width="196" height="24" rx="8" fill="#301010" />
+                        <text x="844" y="558" fill="#fca5a5" font-size="10.5" font-weight="700">C3 · PYTHON MIDI
                             STREAM</text>
-                        <text x="847" y="582" fill="#ffffff" font-size="10.5" font-weight="700">Audio Data
+                        <text x="844" y="582" fill="#ffffff" font-size="12" font-weight="700">Audio Data
                             Capture</text>
-                        <text x="847" y="601" fill="#a3a3a3" font-size="9">Python component</text>
-                        <text x="847" y="614" fill="#a3a3a3" font-size="9">listening to loopMIDI</text>
-                        <text x="847" y="627" fill="#a3a3a3" font-size="9">in real time (60 FPS)</text>
-                        <text x="847" y="655" fill="#ef4444" font-size="8.5">OUT: 4× NORM [0.0–1.0]</text>
+                        <text x="844" y="602" fill="#a3a3a3" font-size="10.5">Python component</text>
+                        <text x="844" y="617" fill="#a3a3a3" font-size="10.5">listening to loopMIDI</text>
+                        <text x="844" y="632" fill="#a3a3a3" font-size="10.5">in real time (60 FPS)</text>
+                        <text x="844" y="661" fill="#ef4444" font-size="10">OUT: 4× NORM [0.0–1.0]</text>
                     </g>
 
                     <!-- Node C4: Generative Script for Physical Artifact -->
                     <g class="arch-node" id="node-C4" data-id="C4"
                         data-title="C4 · Generative Script for Physical Artifact"
                         data-tech="Deforms phase-shifted helical splines into closed polar loops and sweeps a variable-radius SubD MultiPipe cage with capillary cross-bridges.">
-                        <rect class="node-card" x="1068" y="575" width="187" height="120" rx="8" fill="#1a0b0b"
+                        <rect class="node-card" x="1065" y="570" width="193" height="128" rx="8" fill="#1a0b0b"
                             stroke="#ef4444" stroke-width="1.5" />
-                        <rect x="1068" y="575" width="187" height="22" rx="8" fill="#3b0f0f" />
-                        <text x="1080" y="590" fill="#fca5a5" font-size="9" font-weight="700">C4 · MORPHOGENESIS</text>
-                        <text x="1080" y="613" fill="#ffffff" font-size="10.5" font-weight="700">Generative Script
+                        <rect x="1065" y="570" width="193" height="24" rx="8" fill="#3b0f0f" />
+                        <text x="1077" y="586" fill="#fca5a5" font-size="10.5" font-weight="700">C4 · MORPHOGENESIS</text>
+                        <text x="1077" y="610" fill="#ffffff" font-size="12" font-weight="700">Generative Script
                             for</text>
-                        <text x="1080" y="628" fill="#ffffff" font-size="10.5" font-weight="700">Physical
+                        <text x="1077" y="626" fill="#ffffff" font-size="12" font-weight="700">Physical
                             Artifact</text>
-                        <text x="1080" y="648" fill="#a3a3a3" font-size="9">Polar loop closure +</text>
-                        <text x="1080" y="661" fill="#a3a3a3" font-size="9">SubD MultiPipe ring</text>
-                        <text x="1080" y="682" fill="#f87171" font-size="8.5">OUT: .GLB + .STL MESH</text>
+                        <text x="1077" y="647" fill="#a3a3a3" font-size="10.5">Polar loop closure +</text>
+                        <text x="1077" y="662" fill="#a3a3a3" font-size="10.5">SubD MultiPipe artifact</text>
+                        <text x="1077" y="685" fill="#f87171" font-size="10">OUT: .GLB + .STL MESH</text>
                     </g>
 
                     <!-- COLUMN 4: WEB DEPLOYMENT, NOTION & DIGITAL FABRICATION -->
@@ -518,61 +518,61 @@
                     <!-- Node D1: 3D Web Viewer (Urban Area Map) -->
                     <g class="arch-node" id="node-D1" data-id="D1" data-title="D1 · 3D Web Viewer (Tokyo Urban Map)"
                         data-tech="Google <model-viewer> scene displaying extruded Tokyo OSM blocks with interactive CH1–CH4 hotspots playing the linked Ableton audio stems.">
-                        <rect class="node-card" x="1315" y="235" width="140" height="115" rx="8" fill="#121212"
+                        <rect class="node-card" x="1312" y="230" width="146" height="122" rx="8" fill="#121212"
                             stroke="#a3a3a3" stroke-width="1.3" />
-                        <rect x="1315" y="235" width="140" height="22" rx="8" fill="#262626" />
-                        <text x="1325" y="250" fill="#e5e5e5" font-size="8.5" font-weight="700">D1 · WEBGL MAP</text>
-                        <text x="1325" y="273" fill="#ffffff" font-size="10.5" font-weight="700">3D Web Viewer</text>
-                        <text x="1325" y="290" fill="#a3a3a3" font-size="9">Tokyo Area Map</text>
-                        <text x="1325" y="304" fill="#f87171" font-size="8.5">+ Spatial Audio</text>
-                        <text x="1325" y="335" fill="#737373" font-size="8">&lt;model-viewer&gt;</text>
+                        <rect x="1312" y="230" width="146" height="24" rx="8" fill="#262626" />
+                        <text x="1322" y="246" fill="#e5e5e5" font-size="10" font-weight="700">D1 · WEBGL MAP</text>
+                        <text x="1322" y="271" fill="#ffffff" font-size="12" font-weight="700">3D Web Viewer</text>
+                        <text x="1322" y="290" fill="#a3a3a3" font-size="10.5">Tokyo Area Map</text>
+                        <text x="1322" y="306" fill="#f87171" font-size="10">+ Spatial Audio</text>
+                        <text x="1322" y="338" fill="#737373" font-size="9.5">&lt;model-viewer&gt;</text>
                     </g>
 
                     <!-- Node D2: 3D Web Viewer (Physical Artifact) -->
                     <g class="arch-node" id="node-D2" data-id="D2"
-                        data-title="D2 · 3D Web Viewer (Braided Ring Artifact)"
-                        data-tech="Interactive 360° PBR metallic ring showcase with mobile AR preview (WebXR / Quick Look) ready for iframe embedding.">
-                        <rect class="node-card" x="1315" y="430" width="140" height="110" rx="8" fill="#121212"
+                        data-title="D2 · 3D Web Viewer (Braided Physical Artifact)"
+                        data-tech="Interactive 360° PBR metallic artifact showcase with mobile AR preview (WebXR / Quick Look) ready for iframe embedding.">
+                        <rect class="node-card" x="1312" y="426" width="146" height="118" rx="8" fill="#121212"
                             stroke="#a3a3a3" stroke-width="1.3" />
-                        <rect x="1315" y="430" width="140" height="22" rx="8" fill="#262626" />
-                        <text x="1325" y="445" fill="#e5e5e5" font-size="8.5" font-weight="700">D2 · WEBGL RING</text>
-                        <text x="1325" y="468" fill="#ffffff" font-size="10.5" font-weight="700">3D Web Viewer</text>
-                        <text x="1325" y="485" fill="#a3a3a3" font-size="9">Braided Artifact</text>
-                        <text x="1325" y="499" fill="#a3a3a3" font-size="8.5">+ Mobile AR</text>
-                        <text x="1325" y="527" fill="#737373" font-size="8">&lt;model-viewer&gt;</text>
+                        <rect x="1312" y="426" width="146" height="24" rx="8" fill="#262626" />
+                        <text x="1322" y="442" fill="#e5e5e5" font-size="10" font-weight="700">D2 · WEBGL ARTIFACT</text>
+                        <text x="1322" y="467" fill="#ffffff" font-size="12" font-weight="700">3D Web Viewer</text>
+                        <text x="1322" y="486" fill="#a3a3a3" font-size="10.5">Braided Artifact</text>
+                        <text x="1322" y="502" fill="#a3a3a3" font-size="10">+ Mobile AR</text>
+                        <text x="1322" y="531" fill="#737373" font-size="9.5">&lt;model-viewer&gt;</text>
                     </g>
 
                     <!-- Node D3: Notion Workspace -->
                     <g class="arch-node" id="node-D3" data-id="D3" data-title="D3 · Notion Team Repository"
                         data-tech="Embeds both 3D Web Viewers via /embed blocks alongside field recordings, team metadata, and downloadable .osm/.glb archives.">
-                        <rect class="node-card" x="1492" y="340" width="88" height="100" rx="8" fill="#171717"
+                        <rect class="node-card" x="1490" y="336" width="92" height="108" rx="8" fill="#171717"
                             stroke="#d4d4d4" stroke-width="1.5" />
-                        <text x="1536" y="368" text-anchor="middle" fill="#a3a3a3" font-size="8.5" font-weight="700">D3
+                        <text x="1536" y="364" text-anchor="middle" fill="#a3a3a3" font-size="10" font-weight="700">D3
                             · ARCHIVE</text>
-                        <text x="1536" y="393" text-anchor="middle" fill="#ffffff" font-size="12"
+                        <text x="1536" y="391" text-anchor="middle" fill="#ffffff" font-size="13.5"
                             font-weight="700">Notion</text>
-                        <text x="1536" y="412" text-anchor="middle" fill="#a3a3a3" font-size="8.5">Team Page</text>
-                        <text x="1536" y="426" text-anchor="middle" fill="#737373" font-size="8">/embed</text>
+                        <text x="1536" y="412" text-anchor="middle" fill="#a3a3a3" font-size="10">Team Page</text>
+                        <text x="1536" y="428" text-anchor="middle" fill="#737373" font-size="9.5">/embed</text>
                     </g>
 
                     <!-- Node D4: Digital Fabrication -->
                     <g class="arch-node" id="node-D4" data-id="D4" data-title="D4 · Digital Fabrication Output"
                         data-tech="Watertight 2-manifold STL/STEP mesh converted from SubD MultiPipe (minimum strut thickness >= 1.0 mm) for SLA/SLS/SLM 3D printing.">
-                        <rect class="node-card" x="1315" y="610" width="245" height="95" rx="8" fill="#1a0b0b"
+                        <rect class="node-card" x="1312" y="606" width="252" height="102" rx="8" fill="#1a0b0b"
                             stroke="#ef4444" stroke-width="1.5" />
-                        <rect x="1315" y="610" width="245" height="22" rx="8" fill="#3b0f0f" />
-                        <text x="1327" y="625" fill="#fca5a5" font-size="9" font-weight="700">D4 · PHYSICAL
+                        <rect x="1312" y="606" width="252" height="24" rx="8" fill="#3b0f0f" />
+                        <text x="1324" y="622" fill="#fca5a5" font-size="10.5" font-weight="700">D4 · PHYSICAL
                             OUTPUT</text>
-                        <text x="1327" y="649" fill="#ffffff" font-size="11.5" font-weight="700">Digital
+                        <text x="1324" y="648" fill="#ffffff" font-size="13" font-weight="700">Digital
                             Fabrication</text>
-                        <text x="1327" y="667" fill="#d4d4d4" font-size="9.5">Watertight 2-Manifold STL / STEP</text>
-                        <text x="1327" y="688" fill="#f87171" font-size="8.5">SLA RESIN · SLS NYLON · METAL SLM</text>
+                        <text x="1324" y="668" fill="#d4d4d4" font-size="11">Watertight 2-Manifold STL / STEP</text>
+                        <text x="1324" y="692" fill="#f87171" font-size="10">SLA RESIN · SLS NYLON · METAL SLM</text>
                     </g>
 
                 </g>
 
                 <!-- Bottom Canvas Metadata Stamp -->
-                <g font-family="'JetBrains Mono', Consolas, monospace" fill="#525252" font-size="9.5">
+                <g font-family="'JetBrains Mono', Consolas, monospace" fill="#737373" font-size="11">
                     <text x="48" y="814">TOMAS MENA COMPUTATIONAL DESIGN · TOKYO WORKSHOP PIPELINE</text>
                     <text x="1555" y="814" text-anchor="end">SCALE: METRIC (1 UNIT = 1M) · CRS: WGS84 → LOCAL
                         CARTESIAN</text>
@@ -582,10 +582,10 @@
 
         <!-- Interactive Node Inspector Footer Bar -->
         <footer id="inspector-bar"
-            class="px-5 py-2.5 bg-neutral-950 border-t border-neutral-800/90 flex items-center justify-between gap-4 text-xs shrink-0">
+            class="px-5 py-2.5 bg-neutral-950 border-t border-neutral-800/90 flex items-center justify-between gap-4 text-sm shrink-0">
             <div class="flex items-center gap-2.5 truncate">
                 <span
-                    class="px-2 py-0.5 rounded bg-neutral-900 border border-neutral-700 text-[10px] font-semibold text-[#ef4444]">INSPECTOR</span>
+                    class="px-2 py-0.5 rounded bg-neutral-900 border border-neutral-700 text-xs font-semibold text-[#ef4444]">INSPECTOR</span>
                 <span id="inspector-title" class="font-semibold text-neutral-200">Hover or click any module to trace
                     upstream/downstream data dependencies</span>
                 <span class="text-neutral-600 hidden md:inline">|</span>
@@ -593,7 +593,7 @@
                     merger, real-time loopMIDI listener, dual 3D Web Viewers, and Digital Fabrication outputs.</span>
             </div>
             <button id="btn-reset-focus"
-                class="hidden px-2.5 py-1 rounded bg-neutral-800 hover:bg-neutral-700 text-[10px] text-neutral-200 shrink-0">
+                class="hidden px-2.5 py-1 rounded bg-neutral-800 hover:bg-neutral-700 text-xs text-neutral-200 shrink-0">
                 Reset Selection
             </button>
         </footer>
